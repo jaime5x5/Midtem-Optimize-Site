@@ -1,0 +1,98 @@
+@import url("normalize.css");
+@import url("960-12-col.css");
+/* =========
+Body Styling
+* font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+* bg.png file for background
+========= */
+body {
+  background: url("../img/bg_opt.png");
+  color: #fff;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
+
+/* =========
+Blockquote
+* color #e44d26
+* font size 2em
+* font style italic
+* letter spacing 1px
+* text aligned center
+========= */
+blockquote {
+  color: #e44d26;
+  font-size: 2em;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-align: center; }
+
+/* =========
+*Navigation
+* List Items - Navigation provided
+
+*Anchor Links
+* padding: 10px 10px 10px 40px;
+* color on hover #E44D26
+========= */
+/* Base link styling */
+nav ul li {
+	list-style-type: none;
+	float: left;
+	margin-left: 20px;
+}
+nav ul li a {
+	background-image: url("../img/icons/icons_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0 -120px;
+	padding: 10px 10px 10px 40px;
+	display: block;
+	height: 25px;
+	&:link, &:visited { 
+		color: #FFF;
+	  text-decoration: none;
+	  text-transform: uppercase;
+	}
+	&:hover {
+		color: #e44d26;
+	}
+}
+@each $navname in home, super, html5 {
+  	##{$navname} a:hover {
+	  	@if $navname == home {
+  		background-position: 0 5px;
+  	}
+  	@if $navname == super {
+  		background-position: 0 -38px;
+  	}
+  	@if $navname == html5 {
+  		background-position: 0 -80px;
+  	}
+  }
+}
+article img {
+  border: 10px solid #fff;
+}
+.grid_3 img {
+		background-image: url("../img/icons/bio_pix.jpg");
+		background-repeat: no-repeat;
+		padding: 0 0 0 200px;
+		display: block;
+		height: 190px;
+		background-position: 0 0;
+}
+@each $name in zeldman, meyer, sullivan, marcotte {
+  	##{$name} img {
+	  	@if $name == zeldman {
+  		background-position: 0 0;
+  	}
+  	@if $name == meyer {
+  		background-position: 0 -220px;
+  	}
+  	@if $name == sullivan {
+  		background-position: 0 -440px;
+  	}
+  	@if $name == marcotte {
+  		background-position: 0 -660px;
+  	}
+  }
+}
+
